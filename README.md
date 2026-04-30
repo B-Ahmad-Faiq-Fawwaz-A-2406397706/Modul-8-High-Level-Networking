@@ -31,7 +31,7 @@ Implementasi MyPaymentService saat ini hanya mengembalikan response sukses secar
 
 **7. What impact does the adoption of gRPC as a communication protocol have on the overall 
 architecture and design of distributed systems, particularly in terms of interoperability with 
-other technologies and platforms? **
+other technologies and platforms?**
 
 Adopsi gRPC membawa perubahan signifikan pada desain sistem terdistribusi karena mendorong pendefinisian kontrak service yang ketat melalui file .proto. Hal ini meningkatkan interoperabilitas antar layanan yang ditulis dalam bahasa pemrograman berbeda, namun di sisi lain membutuhkan pemahaman tambahan tentang Protocol Buffers dan toolchain-nya. Browser support yang terbatas juga membuat gRPC lebih cocok digunakan untuk komunikasi antar service internal daripada komunikasi langsung dengan frontend web.
 
@@ -46,6 +46,6 @@ capabilities of gRPC in terms of real-time communication and responsiveness?**
 REST menggunakan model request-response yang sederhana dan stateless, di mana setiap interaksi berdiri sendiri. Ini membuatnya mudah dipahami tetapi kurang efisien untuk komunikasi real-time karena membutuhkan polling atau mekanisme tambahan seperti WebSocket. gRPC dengan bidirectional streaming memungkinkan komunikasi dua arah yang persisten dan efisien, sehingga jauh lebih responsif untuk kebutuhan real-time seperti chat atau live data feed.
 
 **10. What are the implications of the schema-based approach of gRPC, using Protocol Buffers, 
-compared to the more flexible, schema-less nature of JSON in REST API payloads? **
+compared to the more flexible, schema-less nature of JSON in REST API payloads?**
 
 Penggunaan Protocol Buffers pada gRPC memastikan setiap pesan memiliki struktur yang terdefinisi ketat sehingga mengurangi risiko kesalahan format data dan mempermudah validasi secara otomatis. Sebaliknya, JSON pada REST bersifat fleksibel dan mudah dibaca manusia, namun membutuhkan validasi manual dan rentan terhadap perubahan struktur yang tidak terdokumentasi. Pendekatan schema-based gRPC lebih cocok untuk sistem skala besar yang membutuhkan konsistensi data, sementara JSON lebih mudah digunakan untuk API publik yang sering berubah.
